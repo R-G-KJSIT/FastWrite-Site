@@ -50,7 +50,7 @@ const Footer = () => {
             <h3 className="text-base font-semibold mb-4">Resources</h3>
             <ul className="space-y-2.5 text-sm text-gray-400">
               <li><a href="https://pypi.org/Project/FastWrite" className="hover:text-white">PyPI Package</a></li>
-              <li><a href="https://github.com/search?q=FastWrite" className="hover:text-white">GitHub Repository</a></li>
+              <li><a href="https://github.com/r-g-kjsit/FastWrite" className="hover:text-white">GitHub Repository</a></li>
               <li><a href="#" className="hover:text-white">Release Notes</a></li>
               <li><a href="#" className="hover:text-white">Contributing</a></li>
               <li><a href="#" className="hover:text-white">License</a></li>

@@ -14,16 +14,7 @@ const Installation = () => {
   };
 
   const configExamples = `
-# .fastwrite.yaml configuration example
-provider: openai
-api_key: ${"{OPENAI_API_KEY}"}
-style: google
-models:
-  openai: gpt-4
-  groq: llama3-70b-8192
-  gemini: gemini-pro
-output_dir: ./docs
-verbose: true
+no additional configuration is required by the user
   `;
 
   return (
@@ -63,12 +54,8 @@ verbose: true
             <div>
               <h3 className="text-lg font-semibold text-gray-900">Configuration</h3>
               <p className="mt-2 text-sm text-gray-600">
-                Create a <code className="text-fastwrite-600 text-sm font-mono bg-gray-100 px-1 py-0.5 rounded">.fastwrite.yaml</code> file 
-                in your project root to customize FastWrite's behavior:
+                No Additional Configuration is needed from the user. If needed, the module will ask for API keys on first run.
               </p>
-              <pre className="mt-4 p-4 bg-gray-50 rounded-md overflow-x-auto text-sm text-gray-800 font-mono">
-                {configExamples}
-              </pre>
             </div>
 
             <div>
@@ -80,17 +67,11 @@ verbose: true
                 <div className="p-4 bg-gray-50 rounded-md">
                   <h4 className="font-medium text-gray-900 mb-2">Command Line</h4>
                   <code className="text-sm text-gray-800 font-mono">
-                    fastwrite document --path ./my_project --output ./docs
+                  python3 -m FastWrite code_filename.py --LLM_NAME
                   </code>
                 </div>
                 
-                <div className="p-4 bg-gray-50 rounded-md">
-                  <h4 className="font-medium text-gray-900 mb-2">Python API</h4>
-                  <code className="text-sm text-gray-800 font-mono">
-                    from fastwrite import document_function<br />
-                    docstring = document_function(my_function)
-                  </code>
-                </div>
+                
               </div>
             </div>
           </div>
