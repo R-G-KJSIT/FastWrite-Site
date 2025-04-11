@@ -27,7 +27,7 @@ const Hero = () => {
                 </a>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <a href="https://pypi.org/Project/FastWrite" target="_blank" rel="noopener noreferrer">
+                <a href="https://pypi.org/project/FastWrite/" target="_blank" rel="noopener noreferrer">
                   View on PyPI
                 </a>
               </Button>

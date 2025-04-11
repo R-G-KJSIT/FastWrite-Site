@@ -25,7 +25,7 @@ const Navbar = () => {
         
         <div className="flex items-center space-x-4">
           <Button variant="outline" size="sm" asChild>
-            <a href="https://pypi.org/Project/FastWrite" target="_blank" rel="noopener noreferrer">
+            <a href="https://pypi.org/project/FastWrite/" target="_blank" rel="noopener noreferrer">
               PyPI
             </a>
           </Button>

@@ -81,7 +81,7 @@ no additional configuration is required by the user
               Check out the PyPI page for complete documentation and API reference.
             </p>
             <Button className="bg-fastwrite-600 hover:bg-fastwrite-700" asChild>
-              <a href="https://pypi.org/Project/FastWrite" target="_blank" rel="noopener noreferrer">
+              <a href="https://pypi.org/project/FastWrite/" target="_blank" rel="noopener noreferrer">
                 Visit PyPI Page
               </a>
             </Button>

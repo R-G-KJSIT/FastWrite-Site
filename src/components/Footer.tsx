@@ -23,7 +23,7 @@ const Footer = () => {
               <a href="https://github.com/r-g-kjsit/FastWrite" className="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">
                 <Github className="h-5 w-5" />
               </a>
-              <a href="https://pypi.org/Project/FastWrite" className="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">
+              <a href="https://pypi.org/project/FastWrite/" className="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">
                 <Package className="h-5 w-5" />
               </a>
             </div>
@@ -36,14 +36,14 @@ const Footer = () => {
               <li><a href="#platforms" className="hover:text-white">Supported Platforms</a></li>
               <li><a href="#examples" className="hover:text-white">Code Examples</a></li>
               <li><a href="#installation" className="hover:text-white">Installation</a></li>
-              <li><a href="https://pypi.org/Project/FastWrite" className="hover:text-white">API Reference</a></li>
+              <li><a href="https://pypi.org/project/FastWrite/" className="hover:text-white">API Reference</a></li>
             </ul>
           </div>
           
           <div>
             <h3 className="text-base font-semibold mb-4">Resources</h3>
             <ul className="space-y-2.5 text-sm text-gray-400">
-              <li><a href="https://pypi.org/Project/FastWrite" className="hover:text-white">PyPI Package</a></li>
+              <li><a href="https://pypi.org/project/FastWrite/" className="hover:text-white">PyPI Package</a></li>
               <li><a href="https://github.com/r-g-kjsit/FastWrite" className="hover:text-white">GitHub Repository</a></li>
               <li><a href="#" className="hover:text-white">Release Notes</a></li>
               <li><a href="https://github.com/R-G-KJSIT/FastWrite/blob/main/CONTRIBUTING.md" className="hover:text-white">Contributing</a></li>
