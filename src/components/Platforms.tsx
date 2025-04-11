@@ -13,13 +13,13 @@ const Platforms = () => {
     {
       name: "Groq",
       description: "Utilize Groq's ultra-fast LLMs for lightning-quick documentation generation with minimal latency.",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Groq_logo.svg",
+      logo: "https://groq.com/wp-content/uploads/2024/02/android-icon-192x192-1.png",
       className: "bg-gradient-to-br from-amber-50 to-yellow-50"
     },
     {
       name: "Gemini",
       description: "Leverage Google's multimodal AI capabilities for enhanced code understanding and documentation.",
-      logo: "https://seeklogo.com/images/G/google-gemini-logo-78E6B938C1-seeklogo.com.png",
+      logo: "https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg",
       className: "bg-gradient-to-br from-blue-50 to-indigo-50"
     },
     {
@@ -68,3 +68,4 @@ const Platforms = () => {
 };
 
 export default Platforms;
+
