@@ -30,7 +30,7 @@ const Navbar = () => {
             </a>
           </Button>
           <Button size="sm" className="bg-fastwrite-600 hover:bg-fastwrite-700 text-white" asChild>
-            <a href="https://github.com/search?q=FastWrite" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/r-g-kjsit/FastWrite" target="_blank" rel="noopener noreferrer">
               <Github className="h-4 w-4 mr-2" />
               GitHub
             </a>
