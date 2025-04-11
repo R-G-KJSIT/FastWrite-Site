@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Check, Code, FileBadge, Layers, Lightbulb, Git, Files } from 'lucide-react';
+import { Check, Code, FileBadge, Layers, Lightbulb, GitBranch, Files } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 
 const Features = () => {
@@ -28,7 +28,7 @@ const Features = () => {
     {
       title: "BLEU Score Comparison",
       description: "Objectively measure and compare documentation quality across different LLM providers.",
-      icon: <Git className="h-6 w-6 text-fastwrite-600" />
+      icon: <GitBranch className="h-6 w-6 text-fastwrite-600" />
     },
     {
       title: "Smart Context Handling",
