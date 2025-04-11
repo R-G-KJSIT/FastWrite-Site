@@ -122,12 +122,12 @@ readmegen(documentation, "openai")  # Replace with "groq", "gemini", etc.`,
 
         <div className="mx-auto mt-16 max-w-3xl">
           <Tabs defaultValue="processing" className="w-full">
-            <TabsList className="grid grid-cols-2 md:grid-cols-6 mb-6">
+            <TabsList className="grid grid-cols-2 md:grid-cols-3 mb-6 gap-2">
               {examples.map((example) => (
                 <TabsTrigger 
                   key={example.id} 
                   value={example.id}
-                  className="text-sm"
+                  className="text-sm py-2 whitespace-normal break-words"
                 >
                   {example.title}
                 </TabsTrigger>
