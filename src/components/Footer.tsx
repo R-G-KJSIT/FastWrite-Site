@@ -20,14 +20,8 @@ const Footer = () => {
               An AI-powered Python package for automating code documentation using the most powerful LLM platforms.
             </p>
             <div className="flex space-x-4 mt-6">
-              <a href="https://github.com/search?q=FastWrite" className="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/r-g-kjsit/FastWrite" className="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">
                 <Github className="h-5 w-5" />
-              </a>
-              <a href="https://twitter.com" className="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="https://linkedin.com" className="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">
-                <Linkedin className="h-5 w-5" />
               </a>
               <a href="https://pypi.org/Project/FastWrite" className="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">
                 <Package className="h-5 w-5" />
@@ -52,8 +46,8 @@ const Footer = () => {
               <li><a href="https://pypi.org/Project/FastWrite" className="hover:text-white">PyPI Package</a></li>
               <li><a href="https://github.com/r-g-kjsit/FastWrite" className="hover:text-white">GitHub Repository</a></li>
               <li><a href="#" className="hover:text-white">Release Notes</a></li>
-              <li><a href="#" className="hover:text-white">Contributing</a></li>
-              <li><a href="#" className="hover:text-white">License</a></li>
+              <li><a href="https://github.com/R-G-KJSIT/FastWrite/blob/main/CONTRIBUTING.md" className="hover:text-white">Contributing</a></li>
+              <li><a href="https://github.com/R-G-KJSIT/FastWrite/blob/main/LICENSE" className="hover:text-white">License</a></li>
             </ul>
           </div>
         </div>
