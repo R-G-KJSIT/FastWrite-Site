@@ -134,7 +134,7 @@ readmegen(documentation, "openai")  # Replace with "groq", "gemini", etc.`,
               ))}
             </TabsList>
             {examples.map((example) => (
-              <TabsContent key={example.id} value={example.id} className="mt-0">
+              <TabsContent key={example.id} value={example.id} className="mt-20">
                 <div className="relative rounded-lg bg-gray-900 p-4">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center">
