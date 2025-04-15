@@ -7,9 +7,6 @@ const Navbar = () => {
     <nav className="border-b border-gray-200 py-4 px-4 md:px-8">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 rounded-md bg-gradient-to-tr from-fastwrite-600 to-fastwrite-400 flex items-center justify-center">
-            <span className="text-white font-bold text-lg">F</span>
-          </div>
           <h1 className="text-xl font-bold tracking-tight text-gray-900">
             Fast<span className="text-fastwrite-600">Write</span>
           </h1>
