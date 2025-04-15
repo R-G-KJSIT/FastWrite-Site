@@ -67,7 +67,7 @@ no additional configuration is required by the user
                 <div className="p-4 bg-gray-50 rounded-md">
                   <h4 className="font-medium text-gray-900 mb-2">Command Line</h4>
                   <code className="text-sm text-gray-800 font-mono">
-                  python3 -m FastWrite code_filename.py --LLM_NAME
+                  python3 -m FastWrite code_filename.py --LLM_NAME --Style
                   </code>
                 </div>
                 
