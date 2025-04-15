@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Github } from 'lucide-react';
+import { Github, ArrowUpRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
@@ -27,6 +26,16 @@ const Navbar = () => {
           <Button variant="outline" size="sm" asChild>
             <a href="https://pypi.org/project/FastWrite/" target="_blank" rel="noopener noreferrer">
               PyPI
+            </a>
+          </Button>
+          <Button
+            size="sm"
+            className="text-white bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 animate-gradient-border"
+            asChild
+          >
+            <a href="https://ui.fastwrite.kjsieit.com" target="_blank" rel="noopener noreferrer">
+              Try FastWrite now
+              <ArrowUpRight className="ml-2 h-4 w-4" />
             </a>
           </Button>
           <Button size="sm" className="bg-fastwrite-600 hover:bg-fastwrite-700 text-white" asChild>

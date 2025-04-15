@@ -1,7 +1,7 @@
-
 import React from 'react';
-import { ArrowRight, Terminal, FileCode2, GitCompare } from 'lucide-react';
+import { ArrowRight, Terminal, FileCode2, GitCompare, ArrowUpRight } from 'lucide-react';
 import { Button } from "@/components/ui/button";
+
 
 const Hero = () => {
   return (
@@ -19,16 +19,28 @@ const Hero = () => {
               Automatically generate high-quality documentation for your code using the 
               latest LLM technologies, with support for Groq, OpenRouter, Gemini, OpenAI, and Ollama.
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button className="bg-fastwrite-600 hover:bg-fastwrite-700" size="lg" asChild>
-                <a href="#installation">
-                  Get Started
-                  <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <a href="https://pypi.org/project/FastWrite/" target="_blank" rel="noopener noreferrer">
-                  View on PyPI
+            <div className="mt-10 flex flex-col items-center gap-y-4">
+              <div className="flex items-center justify-center gap-x-6">
+                <Button className="bg-fastwrite-600 hover:bg-fastwrite-700" size="lg" asChild>
+                  <a href="#installation">
+                    Get Started
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+                <Button variant="outline" size="lg" asChild>
+                  <a href="https://pypi.org/project/FastWrite/" target="_blank" rel="noopener noreferrer">
+                    View on PyPI
+                  </a>
+                </Button>
+              </div>
+              <Button
+                className="w-full max-w-md text-white bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 animate-gradient-border"
+                size="lg"
+                asChild
+              >
+                <a href="https://ui.fastwrite.kjsieit.com" target="_blank" rel="noopener noreferrer">
+                  Try FastWrite now
+                  <ArrowUpRight className="ml-2 h-4 w-4" />
                 </a>
               </Button>
             </div>
