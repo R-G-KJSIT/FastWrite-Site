@@ -92,9 +92,26 @@ print(graphviz_code)`,
 # Provide a reference documentation string for comparison
 reference_doc = "Your reference documentation text here..."
 
-# Calculate BLEU score for any LLM provider's documentation
-bleu_score = calculate_bleu(doc_openai, reference_doc)  # Replace with doc_groq, doc_gemini, etc.
-print("BLEU Score:", bleu_score)`,
+# Basic BLEU score calculation
+bleu_score = calculate_bleu(doc_llm_host, reference_doc) ##LLM host may include Groq,Gemini,OpenAI or Ollama
+print("BLEU Score:", bleu_score)
+
+# BLEU score with smoothing
+# Available smoothing methods: 'method0', 'method1', 'method2', 'method3', 'method4', 'method5', 'method6', 'method7'
+bleu_score_smoothed = calculate_bleu(doc_llm_host, reference_doc, smoothing_method='method1')
+print("BLEU Score with Smoothing:", bleu_score_smoothed)
+
+# Calculate BLEU score with multiple reference documents
+from FastWrite import calculate_bleu_multi_reference
+reference_docs = ["Reference doc 1...", "Reference doc 2..."]
+bleu_score_multi = calculate_bleu_multi_reference(doc_llm_host, reference_docs, smoothing_method='method1')
+print("BLEU Score with Multiple References:", bleu_score_multi)
+
+# Calculate BLEU score directly from files
+from FastWrite import calculate_bleu_from_files
+bleu_score_from_files = calculate_bleu_from_files("candidate_doc.txt", "reference_doc.txt", smoothing_method='method1')
+print("BLEU Score from Files:", bleu_score_from_files)
+)`,
       language: "python"
     },
     {
