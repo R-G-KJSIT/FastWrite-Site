@@ -44,7 +44,7 @@ const Footer = () => {
             <ul className="space-y-2.5 text-sm text-gray-400">
               <li><a href="https://pypi.org/project/FastWrite/" className="hover:text-white" target="_blank" rel="noopener noreferrer">PyPI Package</a></li>
               <li><a href="https://github.com/r-g-kjsit/FastWrite" className="hover:text-white" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
-              <li><a href="/release-notes" className="hover:text-white">Release Notes</a></li>
+              <li><a href="/release-notes" className="hover:text-white" target="_blank" rel="noopener noreferrer">Release Notes</a></li>
               <li><a href="https://github.com/R-G-KJSIT/FastWrite/blob/main/CONTRIBUTING.md" className="hover:text-white" target="_blank" rel="noopener noreferrer">Contributing</a></li>
               <li><a href="https://github.com/R-G-KJSIT/FastWrite/blob/main/LICENSE" className="hover:text-white" target="_blank" rel="noopener noreferrer">License</a></li>
             </ul>
