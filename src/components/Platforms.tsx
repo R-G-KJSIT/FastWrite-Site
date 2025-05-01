@@ -25,7 +25,7 @@ const Platforms = () => {
     {
       name: "OpenRouter",
       description: "Access multiple models through a unified API for flexible, best-in-class documentation.",
-      logo: "https://api.iconify.design/simple-icons:openai.svg",
+      logo: "https://openrouter.ai/favicon.ico",
       className: "bg-gradient-to-br from-purple-50 to-violet-50"
     },
     {

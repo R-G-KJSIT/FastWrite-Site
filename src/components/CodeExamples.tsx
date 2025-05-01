@@ -58,7 +58,7 @@ doc_openai = generate_documentation_openai(code_content, custom_prompt)
 print(doc_openai)
 
 # Express Mode (Command Line)
-# py -m FastWrite code_filename.py --LLM_NAME
+py -m FastWrite code_filename.py --LLM_NAME --Style # Where Style can be Simplify, Formal, Research or Custom-Prompt
 
 # With other LLM providers
 from FastWrite import generate_documentation_groq, generate_documentation_gemini
