@@ -3,7 +3,6 @@ Python Module for AI-Assisted Documentation
 
 ## Current Statistics:
 - [![PyPI Downloads](https://static.pepy.tech/badge/fastwrite)](https://pepy.tech/projects/fastwrite)
-- Latest Version: [V 1.1.5](https://pypi.org/project/FastWrite)
 
 ## Overview
 This module provides functionality to:
