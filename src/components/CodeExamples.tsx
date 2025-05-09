@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Terminal } from 'lucide-react';
@@ -122,6 +121,18 @@ print("BLEU Score from Files:", bleu_score_from_files)
 # Generate a README file from the documentation
 readmegen(documentation, "openai")  # Replace with "groq", "gemini", etc.`,
       language: "python"
+    },
+    {
+      id: "rouge",
+      title: "Rouge Score Comparison",
+      code: `from FastWrite.rouge import calculate_rouge
+
+# Provide a reference documentation string for comparison
+reference_doc = "Your reference documentation text here..."
+
+# Calculate Rouge
+rouge = calculate_rouge(doc_llm_host,reference_doc)`,
+      language: "python"
     }
   ];
 
@@ -139,7 +150,7 @@ readmegen(documentation, "openai")  # Replace with "groq", "gemini", etc.`,
 
         <div className="mx-auto mt-16 max-w-3xl">
           <Tabs defaultValue="processing" className="w-full">
-            <TabsList className="grid grid-cols-2 md:grid-cols-3 mb-6 gap-2">
+            <TabsList className="grid grid-cols-2 md:grid-cols-3 mb-6 gap-2 justify-center">
               {examples.map((example) => (
                 <TabsTrigger 
                   key={example.id} 
@@ -152,24 +163,27 @@ readmegen(documentation, "openai")  # Replace with "groq", "gemini", etc.`,
             </TabsList>
             {examples.map((example) => (
               <TabsContent key={example.id} value={example.id} className="mt-20">
-                <div className="relative rounded-lg bg-gray-900 p-4">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center">
-                      <Terminal className="h-5 w-5 text-gray-400 mr-2" />
-                      <span className="text-sm text-gray-400">{example.title}</span>
+               {/* Add a wrapper div with padding */}
+                <div style={{ paddingTop: '25px' }}> 
+                  <div className="relative rounded-lg bg-gray-900 p-4">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center">
+                        <Terminal className="h-5 w-5 text-gray-400 mr-2" />
+                        <span className="text-sm text-gray-400">{example.title}</span>
+                      </div>
+                      <button 
+                        onClick={() => copyToClipboard(example.code, example.id)}
+                        className="text-xs text-gray-400 hover:text-white transition-colors"
+                      >
+                        {copySuccess === example.id ? "Copied!" : "Copy"}
+                      </button>
                     </div>
-                    <button 
-                      onClick={() => copyToClipboard(example.code, example.id)}
-                      className="text-xs text-gray-400 hover:text-white transition-colors"
-                    >
-                      {copySuccess === example.id ? "Copied!" : "Copy"}
-                    </button>
+                    <pre className="overflow-x-auto text-sm">
+                      <code className="text-gray-300 font-mono whitespace-pre">
+                        {example.code}
+                      </code>
+                    </pre>
                   </div>
-                  <pre className="overflow-x-auto text-sm">
-                    <code className="text-gray-300 font-mono whitespace-pre">
-                      {example.code}
-                    </code>
-                  </pre>
                 </div>
               </TabsContent>
             ))}
