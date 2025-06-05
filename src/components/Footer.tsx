@@ -8,9 +8,6 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 rounded-md bg-gradient-to-tr from-fastwrite-600 to-fastwrite-400 flex items-center justify-center">
-                <span className="text-white font-bold text-lg">F</span>
-              </div>
               <h3 className="text-xl font-bold">
                 Fast<span className="text-fastwrite-400">Write</span>
               </h3>
