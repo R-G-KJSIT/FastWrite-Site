@@ -3,30 +3,51 @@ import { Github, ArrowUpRight, Menu } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useSwipeable } from 'react-swipeable';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Navbar = () => {
+  const isMobileDevice = useIsMobile();
   const [showSidebar, setShowSidebar] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(isMobileDevice);
+  const [isSmallScreen, setIsSmallScreen] = useState(typeof window !== "undefined" ? window.innerWidth < 750 : false);
   const navbarRef = useRef<HTMLElement>(null);
   const buttonsRef = useRef<HTMLDivElement>(null);
 
+  // Track window width for small screens
   useEffect(() => {
+    const handleResize = () => {
+      setIsSmallScreen(window.innerWidth < 750);
+    };
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Always use sidebar on small screens
+  useEffect(() => {
+    if (isSmallScreen) {
+      setIsMobile(true);
+      setShowSidebar(false);
+    } else {
+      setIsMobile(isMobileDevice);
+    }
+  }, [isSmallScreen, isMobileDevice]);
+
+  // Only run overflow logic on desktop and not small screens
+  useEffect(() => {
+    if (isSmallScreen || isMobileDevice) return;
     const checkNavbarOverflow = () => {
       if (!navbarRef.current || !buttonsRef.current) return;
       const overflow = buttonsRef.current.offsetWidth > navbarRef.current.offsetWidth;
-
       if (!overflow && isMobile) {
         setShowSidebar(false);
       }
-
       setIsMobile(overflow);
     };
-
     checkNavbarOverflow();
     window.addEventListener('resize', checkNavbarOverflow);
-
     return () => window.removeEventListener('resize', checkNavbarOverflow);
-  }, [isMobile]);
+  }, [isMobile, isMobileDevice, isSmallScreen]);
 
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
@@ -34,14 +55,10 @@ const Navbar = () => {
 
   const swipeHandlers = useSwipeable({
     onSwipedRight: () => {
-      if (isMobile) {
-        setShowSidebar(true);
-      }
+      if (isMobile) setShowSidebar(true);
     },
     onSwipedLeft: () => {
-      if (isMobile) {
-        setShowSidebar(false);
-      }
+      if (isMobile) setShowSidebar(false);
     },
     preventDefaultTouchmoveEvent: true,
     trackMouse: true
@@ -53,11 +70,8 @@ const Navbar = () => {
         setShowSidebar(false);
       }
     };
-
     document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [showSidebar, isMobile]);
 
   return (
@@ -69,13 +83,17 @@ const Navbar = () => {
           </h1>
         </div>
         
-        <div className="hidden md:flex items-center space-x-8">
-          <a href="#features" className="text-gray-600 hover:text-gray-900 text-sm font-medium">Features</a>
-          <a href="#platforms" className="text-gray-600 hover:text-gray-900 text-sm font-medium">Platforms</a>
-          <a href="#examples" className="text-gray-600 hover:text-gray-900 text-sm font-medium">Examples</a>
-          <a href="#installation" className="text-gray-600 hover:text-gray-900 text-sm font-medium">Installation</a>
-        </div>
-        
+        {/* Only show horizontal links if not mobile and not small screen and not overflowing */}
+        {!isMobile && (
+          <div className="flex items-center space-x-8">
+            <a href="#features" className="text-gray-600 hover:text-gray-900 text-sm font-medium">Features</a>
+            <a href="#platforms" className="text-gray-600 hover:text-gray-900 text-sm font-medium">Platforms</a>
+            <a href="#examples" className="text-gray-600 hover:text-gray-900 text-sm font-medium">Examples</a>
+            <a href="#installation" className="text-gray-600 hover:text-gray-900 text-sm font-medium">Installation</a>
+          </div>
+        )}
+
+        {/* Show buttons inline if not mobile and not small screen and not overflowing */}
         {!isMobile ? (
           <div className="flex items-center space-x-4" ref={buttonsRef}>
             <Button variant="outline" size="sm" asChild>
@@ -101,12 +119,14 @@ const Navbar = () => {
             </Button>
           </div>
         ) : (
+          // Show menu button if mobile, small screen, or overflowing
           <Button variant="ghost" size="sm" onClick={toggleSidebar}>
             <Menu className="h-4 w-4" />
           </Button>
         )}
       </div>
 
+      {/* Sidebar: show if mobile, small screen, or overflowing */}
       {isMobile && (
         <div
           className={cn(
@@ -116,7 +136,11 @@ const Navbar = () => {
           )}
         >
           <div className="flex flex-col space-y-4">
-             <Button variant="outline" size="sm" asChild>
+            <a href="#features" className="text-white text-lg font-medium">Features</a>
+            <a href="#platforms" className="text-white text-lg font-medium">Platforms</a>
+            <a href="#examples" className="text-white text-lg font-medium">Examples</a>
+            <a href="#installation" className="text-white text-lg font-medium">Installation</a>
+            <Button variant="outline" size="sm" asChild>
               <a href="https://pypi.org/project/FastWrite/" target="_blank" rel="noopener noreferrer">
                 PyPI
               </a>

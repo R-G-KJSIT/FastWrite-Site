@@ -40,7 +40,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebas
 
       // console.log("Visitor logged:", ip);
     } catch (err) {
-      console.error("Logging failed:", err);
+      console.error("LF:", err);
     }
   }
 
